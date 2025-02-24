@@ -21,6 +21,7 @@ public class CriarGlicemiaService implements ICriarGlicemiaService {
         }
         Glicemia glicemia = Glicemia.builder()
                 .measurement(dto.getMeasurement())
+                .timeUuid(dto.getTimeUuid())
                 .build();
         return this.glicemiaRepository.save(glicemia);
     }
