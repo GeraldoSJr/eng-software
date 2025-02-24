@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ListarGlicemiasService implements IListarGlicemiasService {
@@ -17,5 +18,10 @@ public class ListarGlicemiasService implements IListarGlicemiasService {
     @Override
     public List<Glicemia> executar() {
         return this.glicemiaRepository.findAll();
+    }
+
+    @Override
+    public List<Glicemia> listarPorTimeUuid(UUID timeUuid) {
+        return this.glicemiaRepository.findByTimeUuid(timeUuid);
     }
 }

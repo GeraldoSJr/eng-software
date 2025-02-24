@@ -37,6 +37,12 @@ public class GlicemiaController {
                 .body(this.listarGlicemiaService.executar());
     }
 
+    @GetMapping("/horario/{horarioUuid}")
+    public ResponseEntity<List<Glicemia>> listarGlicemiasPorTimeUuid(@PathVariable UUID horarioUuid) {
+        List<Glicemia> glicemias = listarGlicemiaService.listarPorTimeUuid(horarioUuid);
+        return ResponseEntity.ok(glicemias);
+    }
+
     @PutMapping("{id}")
     ResponseEntity<Glicemia> atualizarGlicemia(
             @PathVariable("id") UUID id,
