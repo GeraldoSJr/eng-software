@@ -12,14 +12,6 @@ import com.grupo2.diabetter.service.horario.interfaces.IRecuperarHorarioService;
 
 
 
-
-
-import com.grupo2.diabetter.service.horario.interfaces.ICriarHorarioService;
-import com.grupo2.diabetter.service.horario.interfaces.IAtualizarHorarioService;
-import com.grupo2.diabetter.service.horario.interfaces.IDeletarHorarioService;
-import com.grupo2.diabetter.service.horario.interfaces.IListarHorarioService;
-import com.grupo2.diabetter.service.horario.interfaces.IRecuperarHorarioService;
-
 import jakarta.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;

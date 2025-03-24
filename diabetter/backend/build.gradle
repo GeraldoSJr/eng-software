@@ -4,6 +4,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.1.7'
 	id 'jacoco'
 	id 'checkstyle'
+	id 'com.github.spotbugs' version '5.0.13'
 }
 
 group = 'com.grupo2'
@@ -15,9 +16,42 @@ java {
 	}
 }
 
+spotbugs {
+    toolVersion = '4.7.3'
+    ignoreFailures = false
+    showProgress = true
+    effort = 'max'
+    reportLevel = 'low'
+}
+
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugs/main.html")
+        }
+        xml {
+            enabled = false
+        }
+    }
+}
+
+spotbugsTest {
+    reports {
+        html {
+            enabled = true
+            destination = file("$buildDir/reports/spotbugs/test.html")
+        }
+        xml {
+            enabled = false
+        }
+    }
+}
+
+
 checkstyle {
     toolVersion = '10.12.1'
-    configFile = file("/home/gabriela/es/eng-software-17/diabetter/backend/config/checkstyle.xml")
+    configFile = file("config/checkstyle.xml")
     ignoreFailures = false
     showViolations = true
 }
