@@ -36,9 +36,8 @@ public class Glicemia {
     @JsonProperty
     private float valorGlicemia;
 
-    @ManyToOne
-    @JoinColumn(name = "horario_id", nullable = false)
-    private Horario horario;
+    @Column(name = "horario_id", nullable = false)
+    private String horario;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

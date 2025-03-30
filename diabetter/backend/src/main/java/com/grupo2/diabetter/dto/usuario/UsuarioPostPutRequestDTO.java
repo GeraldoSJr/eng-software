@@ -6,7 +6,6 @@ import com.grupo2.diabetter.enuns.Genero;
 
 import com.grupo2.diabetter.enuns.TipoDiabetes;
 import com.grupo2.diabetter.enuns.TipoInsulina;
-import com.grupo2.diabetter.model.Horario;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
@@ -57,5 +56,5 @@ public class UsuarioPostPutRequestDTO {
 
     private List<String> comorbidades;
 
-    private List<Horario> horarios_afericao;
+    private List<String> horarios_afericao;
 }

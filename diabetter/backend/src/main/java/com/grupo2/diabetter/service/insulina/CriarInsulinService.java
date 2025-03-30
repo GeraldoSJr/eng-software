@@ -4,10 +4,8 @@ import com.grupo2.diabetter.dto.insulina.InsulinPostPutRequestDTO;
 import com.grupo2.diabetter.dto.insulina.InsulinResponseDTO;
 import com.grupo2.diabetter.exception.CommerceException;
 import com.grupo2.diabetter.model.Insulina;
-import com.grupo2.diabetter.model.Horario;
 import com.grupo2.diabetter.model.Glicemia;
 import com.grupo2.diabetter.repository.InsulinRepository;
-import com.grupo2.diabetter.repository.HorarioRepository;
 import com.grupo2.diabetter.repository.GlicemiaRepository;
 import com.grupo2.diabetter.service.insulina.interfaces.ICriarInsulinaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +19,6 @@ public class CriarInsulinService implements ICriarInsulinaService {
     @Autowired
     private InsulinRepository insulinRepository;
 
-    @Autowired
-    private HorarioRepository horarioRepository;
 
     @Autowired
     private GlicemiaRepository glicemiaRepository;
@@ -39,7 +35,7 @@ public class CriarInsulinService implements ICriarInsulinaService {
             throw new CommerceException("Unidades de insulina inválidas");
         }
 
-        if (requestDTO.getHorarioId() == null) {
+        if (requestDTO.getHorario() == null) {
             throw new CommerceException("Horário de insulina inválido");
         }
 
@@ -47,17 +43,13 @@ public class CriarInsulinService implements ICriarInsulinaService {
             throw new CommerceException("Glicemia inválida");
         }
 
-        // Fetch the associated Horario and Glicemia entities
-        Horario horario = horarioRepository.findById(requestDTO.getHorarioId())
-                .orElseThrow(() -> new CommerceException("Horário não encontrado"));
-
         Glicemia glicemia = glicemiaRepository.findById(requestDTO.getGlicemia())
                 .orElseThrow(() -> new CommerceException("Glicemia não encontrada"));
 
         Insulina insulina = Insulina.builder()
                 .tipoInsulina(requestDTO.getTipoInsulina())
                 .unidades(requestDTO.getUnidades())
-                .horario(horario)
+                .horario(requestDTO.getHorario())
                 .glicemia(glicemia)
                 .dataAplicacao(LocalDateTime.now())
                 .build();
@@ -68,8 +60,7 @@ public class CriarInsulinService implements ICriarInsulinaService {
                 .insulidaId(insulinaSalva.getId())
                 .tipoInsulina(insulinaSalva.getTipoInsulina())
                 .unidades(insulinaSalva.getUnidades())
-                .horarioId(insulinaSalva.getHorario().getId())
-                .horario(insulinaSalva.getHorario().getId())
+                .horario(insulinaSalva.getHorario())
                 .glicemia(insulinaSalva.getGlicemia().getId())
                 .dataAplicacao(insulinaSalva.getDataAplicacao())
                 .build();

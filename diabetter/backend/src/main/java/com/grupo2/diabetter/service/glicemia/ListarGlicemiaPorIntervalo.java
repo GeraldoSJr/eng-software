@@ -1,6 +1,5 @@
 package com.grupo2.diabetter.service.glicemia;
 
-import com.grupo2.diabetter.dto.glicemia.GlicemiaResponseDTO;
 import com.grupo2.diabetter.dto.glicemia.IntervaloDataDTO;
 import com.grupo2.diabetter.model.Glicemia;
 import com.grupo2.diabetter.repository.GlicemiaRepository;

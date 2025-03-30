@@ -40,9 +40,8 @@ public class Insulina {
     @Column(nullable = false)
     private float unidades;
 
-    @ManyToOne
-    @JoinColumn(name = "horario_id", nullable = false)
-    private Horario horario;
+    @Column(name = "horario_id", nullable = false)
+    private String horario;
 
     @OneToOne
     @JoinColumn(name = "glicemia_id", nullable = false, unique = true)  // Cada insulina pertence a UMA glicemia

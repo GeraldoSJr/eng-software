@@ -1,7 +1,6 @@
 package com.grupo2.diabetter.dto.glicemia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.grupo2.diabetter.model.Horario;
 import com.grupo2.diabetter.model.Insulina;
 
 import jakarta.validation.constraints.NotNull;
@@ -26,7 +25,7 @@ public class GlicemiaPostPutRequestDto {
 
     private float valorGlicemia;
 
-    private UUID horario;
+    private String horario;
 
     private UUID insulina;
 

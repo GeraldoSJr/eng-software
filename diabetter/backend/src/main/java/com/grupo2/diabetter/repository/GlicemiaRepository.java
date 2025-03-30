@@ -8,6 +8,6 @@ import java.util.List;
 import java.util.UUID;
 
 public interface GlicemiaRepository extends JpaRepository<Glicemia, UUID> {
-    List<Glicemia> findByHorarioId(UUID horarioId);
+    List<Glicemia> findByHorario(String horario);
     List<Glicemia> findByCreatedAtBetween(LocalDateTime start, LocalDateTime end);
 }

@@ -82,8 +82,7 @@ public class Usuario {
     private List<String> comorbidades;
 
     @Column(nullable = true)
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
-    private List<Horario> horarios_afericao;
+    private List<String> horarios_afericao;
 
 
 }

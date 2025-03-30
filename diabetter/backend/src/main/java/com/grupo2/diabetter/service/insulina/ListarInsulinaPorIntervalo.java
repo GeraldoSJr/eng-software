@@ -1,6 +1,5 @@
 package com.grupo2.diabetter.service.insulina;
 
-import com.grupo2.diabetter.dto.insulina.InsulinResponseDTO;
 import com.grupo2.diabetter.dto.insulina.IntervaloDataDTO;
 import com.grupo2.diabetter.model.Insulina;
 import com.grupo2.diabetter.repository.InsulinRepository;

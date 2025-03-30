@@ -25,7 +25,7 @@ public class ListarInsulinService implements IListarInsulinaService {
                         .insulidaId(insulina.getId())
                         .tipoInsulina(insulina.getTipoInsulina())
                         .unidades(insulina.getUnidades())
-                        .horarioId(insulina.getHorario().getId())
+                        .horario(insulina.getHorario())
                         .glicemia(insulina.getGlicemia() != null ? insulina.getGlicemia().getId() : null)
                         .dataAplicacao(insulina.getDataAplicacao())
                         .build()
@@ -33,14 +33,14 @@ public class ListarInsulinService implements IListarInsulinaService {
     }
 
     @Override
-    public List<InsulinResponseDTO> listarInsulinaPorHorario(UUID horarioId) {
-        List<Insulina> insulinas = insulinRepository.findByHorarioId(horarioId);
+    public List<InsulinResponseDTO> listarInsulinaPorHorario(String horarioId) {
+        List<Insulina> insulinas = insulinRepository.findByHorario(horarioId);
         return insulinas.stream().map(insulina ->
                 InsulinResponseDTO.builder()
                         .insulidaId(insulina.getId())
                         .tipoInsulina(insulina.getTipoInsulina())
                         .unidades(insulina.getUnidades())
-                        .horarioId(insulina.getHorario().getId())
+                        .horario(insulina.getHorario())
                         .glicemia(insulina.getGlicemia() != null ? insulina.getGlicemia().getId() : null)
                         .dataAplicacao(insulina.getDataAplicacao())
                         .build()

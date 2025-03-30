@@ -8,5 +8,5 @@ import java.util.UUID;
 
 public interface IListarGlicemiasService {
     List<GlicemiaResponseDTO> executar();
-    List<GlicemiaResponseDTO> listarGlicemiaByHorario(UUID horarioId);
+    List<GlicemiaResponseDTO> listarGlicemiaByHorario(String horario);
 }

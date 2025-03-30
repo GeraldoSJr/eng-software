@@ -5,7 +5,6 @@ import java.util.UUID;
 
 import com.grupo2.diabetter.enuns.TipoInsulina;
 import com.grupo2.diabetter.model.Glicemia;
-import com.grupo2.diabetter.model.Horario;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Builder;
@@ -19,6 +18,6 @@ import lombok.NoArgsConstructor;
 public class InsulinPostPutRequestDTO {
     private TipoInsulina tipoInsulina;
     private float unidades;
-    private UUID horarioId;
+    private String horario;
     private UUID glicemia;
 }

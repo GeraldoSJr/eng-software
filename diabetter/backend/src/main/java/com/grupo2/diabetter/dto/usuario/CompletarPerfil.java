@@ -2,7 +2,6 @@ package com.grupo2.diabetter.dto.usuario;
 
 import com.grupo2.diabetter.enuns.TipoDiabetes;
 import com.grupo2.diabetter.enuns.TipoInsulina;
-import com.grupo2.diabetter.model.Horario;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,5 +24,5 @@ public class CompletarPerfil {
 
     private List<String> comorbidades;
 
-    private List<Horario> horarios_afericao;
+    private List<String> horarios_afericao;
 }

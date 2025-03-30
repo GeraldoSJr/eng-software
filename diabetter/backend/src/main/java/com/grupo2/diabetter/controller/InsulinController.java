@@ -70,7 +70,7 @@ public class InsulinController {
     }
 
     @GetMapping("/horario/{horarioId}")
-    public ResponseEntity<List<InsulinResponseDTO>> listarInsulinaPorHorario(@PathVariable UUID horarioId) {
+    public ResponseEntity<List<InsulinResponseDTO>> listarInsulinaPorHorario(@PathVariable String horarioId) {
         List<InsulinResponseDTO> response = listarInsulinService.listarInsulinaPorHorario(horarioId);
         return ResponseEntity.ok(response);
     }

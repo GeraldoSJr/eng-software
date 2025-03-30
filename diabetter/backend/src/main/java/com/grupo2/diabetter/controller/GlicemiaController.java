@@ -53,7 +53,7 @@ public class GlicemiaController {
     }
 
     @GetMapping("/by-horario/{horarioId}")
-    public ResponseEntity<List<GlicemiaResponseDTO>> listarGlicemiaByHorario(@PathVariable UUID horarioId) {
+    public ResponseEntity<List<GlicemiaResponseDTO>> listarGlicemiaByHorario(@PathVariable String horarioId) {
         List<GlicemiaResponseDTO> glicemias = listarGlicemiaService.listarGlicemiaByHorario(horarioId);
         return ResponseEntity.status(HttpStatus.OK).body(glicemias);
     }

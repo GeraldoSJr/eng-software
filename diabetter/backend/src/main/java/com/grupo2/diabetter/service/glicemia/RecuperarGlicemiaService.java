@@ -24,7 +24,7 @@ public class RecuperarGlicemiaService implements IRecuperarGlicemiaService {
         return GlicemiaResponseDTO.builder()
                 .id(glicemia.getId())
                 .valorGlicemia(glicemia.getValorGlicemia())
-                .horario(glicemia.getHorario().getId())
+                .horario(glicemia.getHorario())
                 .insulina(glicemia.getInsulina().getId())
                 .comentario(glicemia.getComentario())
                 .createdAt(glicemia.getCreatedAt())
